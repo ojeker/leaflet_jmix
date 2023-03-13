@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://cubaSample.caption"
+        messagesPack="ch.ojeker.leaflet_jmix.web.screens">
+    <layout spacing="true">
+        <jsComponent id="timePicker"
+                     initFunctionName="cuba_sample_timepicker_connector">
+            <dependencies>
+                <dependency path="webjar://jquery:jquery.min.js"/>
+                <dependency path="vaadin://timepicker/wickedpicker.min.js"/>
+                <dependency path="vaadin://timepicker/wickedpicker.min.css"/>
+                <dependency path="vaadin://timepicker/cuba_sample_timepicker_connector.js"/>
+            </dependencies>
+        </jsComponent>
+        <button id="showValueBtn" caption="Show Value"/>
+    </layout>
+</window>

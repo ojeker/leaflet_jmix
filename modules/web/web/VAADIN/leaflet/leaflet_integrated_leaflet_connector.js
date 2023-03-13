@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Leaflet standalone</title>
+leaflet_integrated_leaflet_connector = function () {
+   var connector = this;
+   var element = connector.getElement();
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-          crossorigin=""/>
+   element.innerHTML = "<div id=\"map\" style=\"width: 600px; height: 400px;\"></div>";
 
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-            crossorigin=""></script>
-</head>
-<body>
-    <div id="mapdiv" style="width: 1000px; height: 700px;"></div>
+	const map = L.map('map').setView([47.20486, 7.54290], 13);
 
-    <script>
-
-	const map = L.map('mapdiv').setView([47.20486, 7.54290], 13);
-
-    //https://cdn.lima-labs.com/{z}/{x}/{y}.png?api=demo
-	//https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg
-	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	const tiles = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg', {
 		maxZoom: 19,
 		attribution: '&copy; Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>'
 	}).addTo(map);
@@ -66,6 +51,8 @@
 
 	map.fitBounds(fl.getBounds());
 
-    </script>
-</body>
-</html>
+	$(window).on("resize", function() {
+        $("#leaflet").height($(window).height()).width($(window).width());
+        map.invalidateSize();
+    }).trigger("resize");
+};

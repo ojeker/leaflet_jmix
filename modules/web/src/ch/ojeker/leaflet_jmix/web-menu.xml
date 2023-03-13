@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <item screen="leafletjmix_LeafletIntegrated" id="leafletjmix_LeafletIntegrated_Top" caption="mainMsg://menu_config.leafletjmix_LeafletIntegrated" insertBefore="application-leafletjmix"/>
     <menu id="application-leafletjmix" insertBefore="administration" caption="mainMsg://menu_config.application-leafletjmix">
+        <item screen="leafletjmix_LeafletIntegrated" caption="mainMsg://menu_config.leafletjmix_LeafletIntegrated"/>
+        <item screen="leafletjmix_CubaSample" caption="mainMsg://menu_config.leafletjmix_CubaSample"/>
     </menu>
 </menu-config>

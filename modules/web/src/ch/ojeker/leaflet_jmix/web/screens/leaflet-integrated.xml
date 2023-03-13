@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://leafletIntegrated.caption"
+        messagesPack="ch.ojeker.leaflet_jmix.web.screens">
+    <layout spacing="true">
+        <jsComponent id="leaflet"
+                     initFunctionName="leaflet_integrated_leaflet_connector">
+            <dependencies>
+                <dependency path="vaadin://leaflet/leaflet_193/leaflet.css" type="STYLESHEET"/>
+                <dependency path="vaadin://leaflet/leaflet_193/leaflet.js" type="JAVASCRIPT"/>
+                <dependency path="vaadin://leaflet/leaflet_integrated_leaflet_connector.js"/>
+            </dependencies>
+        </jsComponent>
+        <textArea id="txtArea" />
+        <button id="showFeatureColBtn" caption="Show FeatureCollection"/>
+    </layout>
+</window>

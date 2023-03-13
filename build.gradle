@@ -118,6 +118,7 @@ configure(webModule) {
     dependencies {
         compileOnly(servletApi)
         compile(globalModule)
+        compile 'org.webjars.npm:jquery:3.6.4'
     }
 
     task webArchive(type: Zip) {
